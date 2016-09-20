@@ -14,7 +14,7 @@ matrix:
 install:
 - ps: (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/projects/neovim/neovim/artifacts/build/Neovim.exe?tag=nightly&job=Configuration%3A%20MINGW_64', 'Neovim.exe')
 - start "" /wait Neovim.exe /S
-- dir C:\Program Files\Neovim\bin
+- dir C:\Program Files (x86)\Neovim\bin
 - nvim --version
 build_script:
 - cmd: '%SCRIPT%'
