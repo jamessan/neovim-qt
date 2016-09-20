@@ -15,6 +15,7 @@ install:
 - ps: (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/projects/neovim/neovim/artifacts/build/Neovim.exe?tag=nightly&job=Configuration%3A%20MINGW_32', 'Neovim.exe')
 - ps: Neovim.exe /S
 - cmd: set PATH=%PATH%;C:\Program Files (x86)\Neovim\bin
+- dir C:\Program Files (x86)\Neovim\bin
 - cmd: nvim --version
 build_script:
 - cmd: '%SCRIPT%'
