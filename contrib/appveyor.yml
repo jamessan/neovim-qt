@@ -12,11 +12,10 @@ configuration:
 matrix:
   fast_finish: true
 install:
-- ps: (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/projects/neovim/neovim/artifacts/build/Neovim.exe?tag=nightly&job=Configuration%3A%20MINGW_32', 'Neovim.exe')
+- ps: (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/projects/neovim/neovim/artifacts/build/Neovim.exe?tag=nightly&job=Configuration%3A%20MINGW_64', 'Neovim.exe')
 - ps: Neovim.exe /S
-- cmd: set PATH=%PATH%;C:\Program Files (x86)\Neovim\bin
-- dir C:\Program Files (x86)\Neovim\bin
-- cmd: nvim --version
+- dir C:\Program Files\Neovim\bin
+- nvim --version
 build_script:
 - cmd: '%SCRIPT%'
 - cmd: cmake --build . --target test
