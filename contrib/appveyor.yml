@@ -11,6 +11,9 @@ configuration:
 - RelWithDebInfo
 matrix:
   fast_finish: true
+install:
+- ps: (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/projects/neovim/neovim/artifacts/build/Neovim.exe?tag=nightly&job=Configuration%3A%20MINGW_32', 'Neovim.exe')
+- ps: Neovim.exe /S
 build_script:
 - cmd: '%SCRIPT%'
 artifacts:
