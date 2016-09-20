@@ -16,6 +16,7 @@ install:
 - ps: Neovim.exe /S
 build_script:
 - cmd: '%SCRIPT%'
+- cmd: cmake --build . --target test
 artifacts:
 - path: INSTALL
   name: neovim-qt
